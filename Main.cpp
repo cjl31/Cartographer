@@ -40,6 +40,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	{
 		map.robot->sensor.MassiveShotInDirection(map.robot->viewDirection);
 	}
+	if (key == GLFW_KEY_E && action == GLFW_PRESS)
+	{
+		map.robot->sensor.ShotAllDirections();
+	}
 }
 void OnResize(GLFWwindow* win, int _width, int _height)
 {
@@ -125,8 +129,6 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		map.DrawEntities();
-
-		//TickerImplementation(&ticker);
 
 		processInput(win);
 		glfwSwapBuffers(win);
