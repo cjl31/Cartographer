@@ -14,4 +14,6 @@ public:
     Robot(glm::vec2 _position, float _size, Shader* _robotShader, Shader* _dotShader, glm::mat4* _worldTransform,
         std::vector<std::shared_ptr<Bound>>* mapBounds, std::vector<std::shared_ptr<Entity>>* _entities);
     Robot(const Robot& other);
+    void Move();
+    
 };

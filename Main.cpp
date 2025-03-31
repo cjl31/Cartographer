@@ -16,22 +16,22 @@ void processInput(GLFWwindow* win)
 	if (glfwGetKey(win, GLFW_KEY_W) == GLFW_PRESS)
 	{
 		map.robot->viewDirection = glm::vec2(0.0f, 1.0f);
-		map.robot->Move(map.robot->viewDirection * map.robot->movementSpeed);
+		map.robot->Move();
 	}
 	if (glfwGetKey(win, GLFW_KEY_S) == GLFW_PRESS)
 	{
 		map.robot->viewDirection = glm::vec2(0.0f, -1.0f);
-		map.robot->Move(map.robot->viewDirection * map.robot->movementSpeed);
+		map.robot->Move();
 	}
 	if (glfwGetKey(win, GLFW_KEY_A) == GLFW_PRESS)
 	{
 		map.robot->viewDirection = glm::vec2(-1.0f, 0.0f);
-		map.robot->Move(map.robot->viewDirection * map.robot->movementSpeed);
+		map.robot->Move();
 	}
 	if (glfwGetKey(win, GLFW_KEY_D) == GLFW_PRESS)
 	{
 		map.robot->viewDirection = glm::vec2(1.0f, 0.0f);
-		map.robot->Move(map.robot->viewDirection * map.robot->movementSpeed);
+		map.robot->Move();
 	}
 }
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -116,7 +116,6 @@ int main()
 	glfwSetKeyCallback(win, key_callback);
 #pragma endregion
 	InitBoundsAndPushToMap(&map);
-	// /*
 	InitRobot(glm::vec2(-5.f ,0.f));
 	map.worldTransform = glm::scale(map.worldTransform, glm::vec3(0.1f, 0.1f, 0.1f));
 
@@ -135,7 +134,6 @@ int main()
 	}
 	glfwTerminate();
 
-	// */
 	return 0;
 }
 

@@ -16,7 +16,7 @@ protected:
 public:
     virtual void InitBuffers();
     virtual void Draw();
-    virtual void Move(glm::vec2 value);
+    virtual void Translate(glm::vec2 value);
     
 };
 

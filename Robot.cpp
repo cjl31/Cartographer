@@ -9,7 +9,7 @@ Robot::Robot(glm::vec2 _position, float _size, Shader* _robotShader, Shader* _do
 {
     sensor = Sensor(mapBounds, &position, _dotShader, _worldTransform, _entities);
     position = glm::vec2(0);
-    Move(_position);
+    Translate(_position);
     shader = _robotShader;
     worldTransform = _worldTransform;
     size = _size;
@@ -45,4 +45,8 @@ Robot& Robot::operator=(const Robot& other)
     color = other.color;
     sensor = other.sensor;
     return *this;
+}
+void Robot::Move()
+{
+    Translate(viewDirection * movementSpeed);
 }

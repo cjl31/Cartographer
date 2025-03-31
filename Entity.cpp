@@ -42,7 +42,7 @@ void Entity::Draw()
     }
 }
 
-void Entity::Move(glm::vec2 value)
+void Entity::Translate(glm::vec2 value)
 {
     position += value;
     localTransform = glm::translate(localTransform, glm::vec3(value, 0.0f));
